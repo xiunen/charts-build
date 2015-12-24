@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <style type="text/css">
+    .chart-item{
+      height: 400px;
+      border:1px solid #ddd;
+      margin: 10px 0;
+      padding: 10px;
+    }
+    .chart-item-container{
+      height: 380px;
+      width: 100%;
+    }
+    #fixed-top, #fixed-bottom{
+      position: fixed;
+      height: 1px;
+      width: 1px;
+    }
+    #fixed-top{
+      top: 0;
+    }
+    #fixed-bottom{
+      bottom: 0;
+    }
+    .main, .sub{
+      height: 100%;
+    }
+    .sub{
+      border-left: 1px solid #ddd;
+    }
+    </style>
+    <div id="fixed-top"></div>
+    <div id="fixed-bottom"></div>
+    <div id="charts-container"></div>
+    <div id="header_31" style="display:none">
+      <select>
+        <option value="time">按时间统计</option>
+        <option value="date">按日统计</option>
+        <option value="week">按周统计</option>
+        <option value="month">按月统计</option>
+        <option value="year">按年统计</option>
+      </select>
+    </div>
+    <div id="header_32" style="display:none">
+      <select>
+        <option value="time">按时间统计</option>
+        <option value="hour">按小时统计</option>
+        <option value="date">按日统计</option>
+        <option value="week">按周统计</option>
+        <option value="month">按月统计</option>
+        <option value="year">按年统计</option>
+      </select>
+    </div>
+    <script type="text/javascript">
+      var DATA = {
+        pie:{
+          type: 21,
+          name:"饼图测试1",
+          data:{
+            A:{data:1},
+            B:{data:2}
+          }          
+        },
+        column:{
+          type: 23,
+          name:"柱状图测试1",
+          multi_column:true,
+          data:{
+            A:{data:1},
+            B:{data:2}
+          }
+        },
+        time:{
+          type:31,
+          name:"时间",
+          data:{
+            1450940672729:5,
+            1450940772729:10,
+            1450940792729:9
+          }
+        },
+        time32:{
+          type:32,
+          name:"时间",
+          data:{
+            1450940672729:5,
+            1450940772729:10,
+            1450940792729:9
+          }
+        },
+        casecade:{
+          type:26,
+          name: '联动图',
+          data:{
+            A:{
+              name:""
+            }
+          }
+        }
+      };
+    </script>
+    <script type="text/javascript" src="../src/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="../src/echarts-all.js"></script>
+    <script type="text/javascript" src="../src/build.js"></script>
+  </body>
+</html>
