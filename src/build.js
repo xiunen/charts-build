@@ -82,7 +82,7 @@
                   type : 'value'
               }
           ];
-          if(!data.multi_column){
+          if(data.multi_column){
             option.series.push({
               type:"bar",
               data:_data

@@ -26,6 +26,8 @@
     }
     .main, .sub{
       height: 100%;
+      display: inline-block;
+      width: 49.5%;
     }
     .sub{
       border-left: 1px solid #ddd;
@@ -56,25 +58,25 @@
     <script type="text/javascript">
       var DATA = {
         pie:{
-          type: 21,
-          name:"饼图测试1",
-          data:{
+          type: 21, //柱状图和饼图都是21，
+          name:"饼图测试1",//图表名称
+          data:{//图表数据
             A:{data:1},
             B:{data:2}
           }          
         },
         column:{
-          type: 23,
+          type: 21,
           name:"柱状图测试1",
-          multi_column:true,
+          multi_column:true,//强制显示柱状图
           data:{
             A:{data:1},
             B:{data:2}
           }
         },
         time:{
-          type:31,
-          name:"时间",
+          type:31,//日期
+          name:"日期",
           data:{
             1450940672729:5,
             1450940772729:10,
@@ -82,7 +84,7 @@
           }
         },
         time32:{
-          type:32,
+          type:32,//时间
           name:"时间",
           data:{
             1450940672729:5,
@@ -95,7 +97,14 @@
           name: '联动图',
           data:{
             A:{
-              name:""
+              data:3,
+              A1:{data:2},
+              A2:{data:1}
+            },
+            B:{
+              data:5,
+              B1:{data:2},
+              B2:{data:3}
             }
           }
         }
