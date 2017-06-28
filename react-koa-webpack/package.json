@@ -8,13 +8,21 @@
   },
   "scripts": {
     "start": "NODE_ENV=production node index",
+    "dev": "NODE_ENV=development node index",
+    "build": "NODE_ENV=production node build/index",
+    "build:dev": "NODE_ENV=development node build/index",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-polyfill": "^6.23.0",
+    "babel-register": "^6.24.1",
+    "http-proxy-middleware": "^0.17.4",
     "koa": "^2.3.0",
+    "koa-proxy": "^0.8.0",
     "react": "^15.6.1",
     "webpack": "^2.6.1"
   }
