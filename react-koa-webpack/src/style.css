@@ -1,0 +1,14 @@
+@import "./styles/basic.css";
+
+$color: white;
+.hello{
+  width: 100%;
+  .world{
+    color: $color;
+  }
+}
+:global{
+  .text-center{
+    text-align: center;
+  }
+}

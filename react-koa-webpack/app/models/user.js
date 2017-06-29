@@ -6,7 +6,7 @@ class User{
   greeting(){
     return `hello ${this.username}`;
   };
-  
+
 }
 
-module.exports = User;
+export default User;

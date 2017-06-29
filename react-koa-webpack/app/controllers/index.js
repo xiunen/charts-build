@@ -1,4 +1,5 @@
-const User = require('../models/User')
+import User from '../models/User';
+
 const app = {
     index(ctx, next){
       const user = new User('Abot');
@@ -8,8 +9,8 @@ const app = {
       ctx.body = "api"
     },
     postData(){
-      
+
     },
 }
 
-module.exports = app;
+export default app;

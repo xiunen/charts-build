@@ -5,4 +5,4 @@ const middleware = () => async (ctx, next) => {
 }
 
 
-module.exports = middleware;
+export default middleware;

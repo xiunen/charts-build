@@ -1,0 +1,19 @@
+{
+    "presets": [
+      "es2015",
+      "react",
+      "stage-2"
+    ],
+    "plugins": ["transform-decorators-legacy"],
+    "env": {
+        "development": {
+          "plugins": ["react-hot-loader/babel"],
+        },
+        "production": {
+          "plugins": ["transform-runtime"],
+        },
+        "staging": {
+          "plugins": ["transform-runtime"],
+        }
+    }
+}

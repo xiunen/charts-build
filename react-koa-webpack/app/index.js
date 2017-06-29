@@ -1,9 +1,9 @@
-const Koa = require('koa');
-const proxy = require('koa-proxy');
+import Koa from 'koa';
+import proxy from 'koa-proxy';
 
-const router = require('./routes');
-const config = require('../config');
-const logger = require('./middlewares/logger')
+import router from './routes';
+import config from'../config';
+import logger from'./middlewares/logger';
 
 const app = new Koa();
 const port = config.port || process.env.PORT || 8080;
@@ -19,4 +19,4 @@ app.listen(port, ()=>{
   console.log('server started port %s', port);
 })
 
-module.exports = app;
+export default app;
