@@ -14,7 +14,7 @@ class App extends Component{
 
   render(){
     console.log('hello world');
-    return (<div styleName="hello">...</div>);
+    return (<div styleName="hello">world</div>);
   }
 }
 

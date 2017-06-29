@@ -1,10 +1,11 @@
 const baseConfig = require('./webpack.base');
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const config = require('../config');
 
-const config = {
+const webpackConfig = {
     output: {
-       path: path.join(__dirname, '/../dist'),
+       path: path.join(__dirname, '/../', config.distPath),
        filename: '[name]-[hash:8].js'
     },
 
@@ -15,4 +16,4 @@ const config = {
     ],
 };
 
-module.exports = Object.assign({}, baseConfig, config);
+module.exports = Object.assign({}, baseConfig, webpackConfig);

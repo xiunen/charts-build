@@ -1,13 +1,14 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const config = require('../config');
 
-const config = {
-  context: path.resolve(__dirname, '../src'),
+const webpackConfig = {
+  context: path.resolve(__dirname, '../', config.sourcePath),
   entry: {
     app: './index.js',
   },
   output: {
-     path: path.join(__dirname, '/../dist'),
+     path: path.join(__dirname, '/../', config.distPath),
      filename: '[name].js'
   },
   resolve: {
@@ -47,4 +48,4 @@ const config = {
   }
 };
 
-module.exports = config;
+module.exports = webpackConfig;

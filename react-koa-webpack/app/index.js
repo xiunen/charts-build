@@ -1,6 +1,7 @@
 import Koa from 'koa';
 import proxy from 'koa-proxy';
 import Pug from 'koa-pug';
+import staticResource from 'koa-static';
 
 import router from './routes';
 import config from'../config';
@@ -10,7 +11,7 @@ const app = new Koa();
 const port = config.port || process.env.PORT || 8080;
 
 const pug = new Pug({
-  viewPath: './app/views',
+  viewPath: config.viewPath,
   debug: process.env.NODE_ENV==='development',
   pretty: process.env.NODE_ENV==='development',
   locals: {
@@ -23,6 +24,8 @@ const pug = new Pug({
 });
 
 app.use(pug.middleware);
+
+app.use(staticResource(config.distPath));
 
 app.use(proxy({
   host: 'http://api.example.com',

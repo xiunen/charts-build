@@ -6,11 +6,14 @@ const config = require(`./webpack.${env}.js`);
 
 // console.log(config);
 
-webpack(config, (error, status)=>{
+const result = webpack(config, (error, status)=>{
   if (error) {
-    console.log(error);
+    console.error(error);
   }else{
-    console.log(status.compilation.errors);
-    console.log(Object.keys(status.compilation.assets));
+    if(status.compilation.errors.length){
+      console.log(status.compilation.errors);
+    }else{
+      console.log(Object.keys(status.compilation.assets));
+    }
   }
 })
