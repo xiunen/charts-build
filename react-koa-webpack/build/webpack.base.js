@@ -29,7 +29,6 @@ const webpackConfig = {
         '@constants': path.resolve('src/constants'),
         '@pages': path.resolve('src/pages'),
         '@reducers': path.resolve('src/reducers'),
-        '@routes': path.resolve('src/routes'),
         '@store':  path.resolve('src/store'),
         '@utils': path.resolve('utils')
       }

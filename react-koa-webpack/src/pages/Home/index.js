@@ -19,7 +19,7 @@ class Home extends Component{
   }
 
   componentWillReceiveProps(nextProps){
-    console.log(nextProps);
+    console.log('nextProps', nextProps);
   }
 
   handleLink(){
