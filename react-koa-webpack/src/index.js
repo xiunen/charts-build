@@ -1,22 +1,21 @@
-import React, {Component, PropTypes} from 'react';
-import cssModule from 'react-css-modules';
+import React from 'react';
+import {render} from 'react-dom';
+import {Provider} from 'react-redux';
+import {browserHistory} from 'react-router';
+import { syncHistoryWithStore } from 'react-router-redux';
+
+import Routers from '@routes';
+import store from '@store';
 
 import style from './style.css';
 
-class App extends Component{
-  static propTypes = {
-    title: PropTypes.string
-  }
 
-  constructor(props){
-    super(props);
-  }
+const history = syncHistoryWithStore(browserHistory, store);
 
-  render(){
-    console.log('hello world');
-    return (<div styleName="hello">world</div>);
-  }
-}
+const App = (
+  <Provider store={store}>
+    <Routers history={history}/>
+  </Provider>
+);
 
-// export default App;
-export default cssModule(App, style, { allowMultiple: true, errorWhenNotFound: false });
+export default App;

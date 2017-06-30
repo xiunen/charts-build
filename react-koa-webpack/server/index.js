@@ -6,6 +6,13 @@ import staticResource from 'koa-static';
 import router from './routes';
 import config from'../config';
 import logger from'./middlewares/logger';
+let assets = {js:[], css:[]}
+try{
+   assets = require(`${__dirname}/../${config.assetsMap}`);
+}catch(e){
+
+}
+console.log(assets);
 
 const app = new Koa();
 const port = config.port || process.env.PORT || 8080;
@@ -15,10 +22,11 @@ const pug = new Pug({
   debug: process.env.NODE_ENV==='development',
   pretty: process.env.NODE_ENV==='development',
   locals: {
+    assets,
     meta:{
       title: 'Test',
-      keywords: '',
-      description: ''
+      keywords: 'test',
+      description: 'test'
     }
   }
 });

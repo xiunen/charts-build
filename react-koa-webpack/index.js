@@ -6,4 +6,4 @@ require('babel-register')({
 
 require('babel-polyfill');
 
-const server = require('./app');
+const server = require('./server');
