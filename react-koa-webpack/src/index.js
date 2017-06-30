@@ -1,20 +1,21 @@
 import React from 'react';
 import {render} from 'react-dom';
 import {Provider} from 'react-redux';
-import {browserHistory} from 'react-router';
+import {Router, Route, browserHistory} from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 
-import Routers from '@routes';
 import store from '@store';
+import Home from '@pages/Home';
+import Category from '@pages/Category';
 
-import style from './style.css';
+const history = syncHistoryWithStore(browserHistory, store)
 
-
-const history = syncHistoryWithStore(browserHistory, store);
-
-const App = (
+const App = ()=>(
   <Provider store={store}>
-    <Routers history={history}/>
+    <Router history={history}>
+      <Route path='/' component={Home}/>
+      <Route path='/category' component={Category}/>
+    </Router>
   </Provider>
 );
 
