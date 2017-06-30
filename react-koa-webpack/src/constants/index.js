@@ -1,7 +1,7 @@
 import LoadingState from './LoadingState';
-import ActionTypes from './ActionTypes';
+import actionTypes from './actionTypes';
 
 export default {
   LoadingState,
-  ActionTypes
+  actionTypes
 }

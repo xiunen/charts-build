@@ -8,7 +8,11 @@ const app = {
       // ctx.body = user.greeting();
     },
     getData(ctx, next){
-      ctx.body = "api"
+      const obj = {
+        status: true,
+        data: [1]
+      }
+      ctx.body = JSON.stringify(obj)
     },
     postData(){
 

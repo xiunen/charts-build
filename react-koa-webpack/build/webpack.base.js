@@ -24,9 +24,9 @@ const webpackConfig = {
   resolve: {
       extensions: ['.js', '.jsx'],
       alias: {
-        '@actions': path.resolve('src/components'),
+        '@actions': path.resolve('src/actions'),
         '@components': path.resolve('src/components'),
-        '@constant': path.resolve('src/constants'),
+        '@constants': path.resolve('src/constants'),
         '@pages': path.resolve('src/pages'),
         '@reducers': path.resolve('src/reducers'),
         '@routes': path.resolve('src/routes'),
