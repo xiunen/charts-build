@@ -3,7 +3,7 @@ import {connect}  from 'react-redux';
 import {push} from 'react-router-redux';
 import cssModule from 'react-css-modules';
 
-import homeActionDescriptor from '@actions/home';
+import homeActionDescriptor from '../../actions/home';
 
 import style from './style.css';
 

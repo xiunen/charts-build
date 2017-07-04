@@ -5,6 +5,7 @@ const config = {
   viewPath: './server/views',
   assetsMap: 'dist/assets.json',
   storeName: 'preloadedState',
+  ssr: true
 }
 
 module.exports = config;

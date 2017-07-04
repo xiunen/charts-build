@@ -6,13 +6,13 @@ import staticResource from 'koa-static';
 import router from './routes';
 import config from'../config';
 import logger from'./middlewares/logger';
+import ssr from'./middlewares/ssr';
 let assets = {js:[], css:[]}
 try{
    assets = require(`${__dirname}/../${config.assetsMap}`);
 }catch(e){
 
 }
-console.log(assets);
 
 const app = new Koa();
 const port = config.port || process.env.PORT || 8080;
@@ -42,7 +42,8 @@ app.use(proxy({
 
 // app.use(views(config.template.path, config.template.options));
 
-app.use(logger())
+app.use(logger());
+app.use(ssr());
 router(app);
 app.listen(port, ()=>{
   console.log('server started port %s', port);

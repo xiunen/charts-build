@@ -4,7 +4,7 @@ const app = {
     async index(ctx, next){
       const user = new User('Abot');
       // ctx.state.user = user
-      await ctx.render('index.pug', {welcome: user.greeting()})
+      await ctx.render('index.pug', ctx.state)
       // ctx.body = user.greeting();
     },
     getData(ctx, next){

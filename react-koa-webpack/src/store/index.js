@@ -2,7 +2,7 @@ import {combineReducers, createStore, applyMiddleware} from 'redux';
 import { browserHistory } from 'react-router';
 import {routerMiddleware} from 'react-router-redux';
 
-import reducers from "@reducers";
+import reducers from "../reducers";
 import middlewares from './middlewares';
 import config from '../../config';
 

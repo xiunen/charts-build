@@ -1,4 +1,4 @@
-import actionTypes from '@constants/actionTypes';
+import actionTypes from '../constants/actionTypes';
 
 // console.log(ADD_ITEM,REQUEST_ITEM_BEGIN,REQUEST_ITEM_SUCCESS,REQUEST_ITEM_FAILURE);
 const counter = ()=>{

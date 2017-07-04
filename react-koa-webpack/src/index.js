@@ -1,18 +1,18 @@
 import React from 'react';
 import {render} from 'react-dom';
 import {Provider} from 'react-redux';
-import {Router, Route, browserHistory} from 'react-router';
+import {Router, Route} from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 
-import getStore from '@store';
-import Home from '@pages/Home';
-import Category from '@pages/Category';
-import Layout from '@pages';
+import getStore from './store';
+import Home from './pages/Home';
+import Category from './pages/Category';
+import Layout from './pages';
 
 const App = (props)=>{
-  const {defaultState} = props;
+  const {defaultState, historyStore } = props;
   const store = getStore(defaultState);
-  const history = syncHistoryWithStore(browserHistory, store)
+  const history = syncHistoryWithStore(historyStore, store)
   return (
     <Layout>
       <Provider store={store}>
