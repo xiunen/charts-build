@@ -6,4 +6,4 @@ import App from '../src';
 const roolEl = document.getElementById('app');
 const defaultState = window.preloadedState;
 
-render(<App defaultState={defaultState} historyStore={browserHistory}/>, roolEl);
+render(<App defaultState={defaultState} history={browserHistory}/>, roolEl);
