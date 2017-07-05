@@ -11,6 +11,14 @@ class Home extends Component{
   static propTypes = {
   }
 
+  static fetchData(dispatch, params){
+    return [
+      dispatch(homeActionDescriptor.counter()),
+      dispatch(homeActionDescriptor.fetchHomeData()),
+    ]
+  }
+
+
   constructor(props){
     super(props);
     this.handleLink = this.handleLink.bind(this);

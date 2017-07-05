@@ -1,27 +1,29 @@
 import React from 'react';
 import {render} from 'react-dom';
 import {Provider} from 'react-redux';
-import {Router, Route} from 'react-router';
-import {syncHistoryWithStore} from 'react-router-redux';
+import {Router} from 'react-router';
 
 import getStore from './store';
-import Home from './pages/Home';
-import Category from './pages/Category';
-import Layout from './pages';
+// import Layout from './pages';
+import routes from './routes';
 
 const App = (props) => {
-  const {defaultState, history: historyStore} = props;
-  const store = getStore(defaultState);
-  const history = syncHistoryWithStore(historyStore, store)
+  const {store, history, state} = props;
+  // const store = getStore(preloadedState);
+  // const history = syncHistoryWithStore(historyStore, store);
+
+  // state.meta = {title: 'gaoshi'};
+
+  // const result = match({history, routes},(error, redirectLocation, renderProps)=>{
+  //   console.log(renderProps);
+  // });
+
   return (
-    <Layout>
-      <Provider store={store}>
-        <Router history={history}>
-          <Route path='/' component={Home}/>
-          <Route path='/category' component={Category}/>
-        </Router>
-      </Provider>
-    </Layout>
+    <Provider store={store}>
+      <Router history={history}>
+        {routes}
+      </Router>
+    </Provider>
   );
 }
 
