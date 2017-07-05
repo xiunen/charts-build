@@ -1,7 +1,7 @@
 import fetch from 'isomorphic-fetch';
 import queryString from 'query-string';
 
-export default function api(ctx) {
+export default function api(ctx, getApi) {
   return store => next => action => {
     const {url, types, query, data, method, ...others} = action;
     if(typeof url === 'undefined'){
@@ -21,14 +21,15 @@ export default function api(ctx) {
       ...others
     });
 
+    const api = (typeof getApi === 'undefined') ? url : getApi(url);
     const allowedMethods = ['GET', 'POST','PUT','DELETE'];
     const methodUpper = (method || 'GET').toUpperCase();
     if (allowedMethods.indexOf(methodUpper) < 0) {
       throw new Error('method not allowed');
     }
-    const hasQuestionSign = url.indexOf('?')!==-1;
+    const hasQuestionSign = api.indexOf('?')!==-1;
 
-    const urlString  = query ? `${url}${hasQuestionSign?'&':'?'}${queryString.stringify(query)}` : url;
+    const urlString  = query ? `${api}${hasQuestionSign?'&':'?'}${queryString.stringify(query)}` : api;
     return fetch(urlString, {
       method: methodUpper,
       body: data

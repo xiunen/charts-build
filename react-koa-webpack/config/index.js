@@ -5,7 +5,8 @@ const config = {
   viewPath: './server/views',
   assetsMap: 'dist/assets.json',
   storeName: 'preloadedState',
-  ssr: true
+  ssr: true,
+  apiHost: 'http://api.example.com'
 }
 
 module.exports = config;
