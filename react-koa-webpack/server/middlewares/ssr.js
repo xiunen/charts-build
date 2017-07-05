@@ -13,8 +13,7 @@ const middleware = () => async (ctx, next) => {
   }
   const req = ctx.request;
   const memoryHistory = createMemoryHistory(ctx.url);
-  const preloadedState = {}
-  const store = getStore(preloadedState);
+  const store = getStore({});
   const history =syncHistoryWithStore(memoryHistory, store);
 
   // const result = new Promise((resolve, reject)=>{
@@ -35,7 +34,9 @@ const middleware = () => async (ctx, next) => {
 
   const view = <App store={store} history={history}/>;
   ctx.state.pageContent = renderToString(view);
-  ctx.state.preloadedState = store.getState();
+  const preloadedState = store.getState()
+  ctx.state.preloadedState = preloadedState;
+  ctx.state.meta = preloadedState.meta;
   return await next();
 }
 

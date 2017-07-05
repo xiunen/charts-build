@@ -4,6 +4,7 @@ import {push} from 'react-router-redux';
 import cssModule from 'react-css-modules';
 
 import homeActionDescriptor from '../../actions/home';
+import metaActionDescriptor from '../../actions/meta';
 
 import style from './style.css';
 
@@ -15,6 +16,7 @@ class Home extends Component{
     return [
       dispatch(homeActionDescriptor.counter()),
       dispatch(homeActionDescriptor.fetchHomeData()),
+      dispatch(metaActionDescriptor({title: 'Home'}))
     ]
   }
 
