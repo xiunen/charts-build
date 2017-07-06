@@ -11,7 +11,7 @@
     "dev": "NODE_ENV=development nodemon index",
     "build": "NODE_ENV=production node build/index",
     "build:dev": "NODE_ENV=development node build/index",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
@@ -58,6 +58,7 @@
     "eslint-plugin-import": "^2.6.1",
     "eslint-plugin-jsx-a11y": "^5.1.1",
     "eslint-plugin-react": "^7.1.0",
+    "jest": "^20.0.4",
     "nodemon": "^1.11.0"
   }
 }
