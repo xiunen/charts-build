@@ -1,0 +1,18 @@
+block vars
+html
+  head
+    meta(charset="UTF-8")
+    title=meta.title
+    meta(name="keywords",content=meta.keywords)
+    meta(name="description",content=meta.description)
+    block header
+    each item in assets.css
+      link(href=item, rel="stylesheet")
+  body
+    #app
+      block content
+    script.
+      var preloadedState=!{JSON.stringify(preloadedState)}
+    each item in assets.js
+      script(src=item, type="text/javascript")
+    block js
