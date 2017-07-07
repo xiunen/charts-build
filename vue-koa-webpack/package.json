@@ -8,6 +8,9 @@
   },
   "scripts": {
     "start": "NODE_ENV=production node index",
+    "dev": "NODE_ENV=development nodemon index",
+    "build": "NODE_ENV=production node build/index",
+    "build:dev": "NODE_ENV=development node build/index",
     "test": "jest"
   },
   "keywords": [
@@ -32,6 +35,14 @@
     "koa-proxy": "^0.8.0",
     "koa-pug": "^3.0.0-2",
     "koa-static": "^3.0.0",
-    "vue": "^2.3.4"
+    "vue": "^2.3.4",
+    "vue-router": "^2.7.0",
+    "vue-template-compiler": "^2.3.4"
+  },
+  "devDependencies": {
+    "extract-text-webpack-plugin": "^2.1.2",
+    "nodemon": "^1.11.0",
+    "vue-loader": "^13.0.0",
+    "webpack": "^3.1.0"
   }
 }

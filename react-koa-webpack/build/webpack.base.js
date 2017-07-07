@@ -13,51 +13,50 @@ const webpackConfig = {
       'react-dom',
       'react-router',
       'react-css-modules',
-      'react-router-redux'
+      'react-router-redux',
     ],
     app: './client/index.js',
   },
   output: {
-     path: path.join(__dirname, '/../', config.distPath),
-     filename: '[name].js'
+    path: path.join(__dirname, '/../', config.distPath),
+    filename: '[name].js',
   },
   resolve: {
-      extensions: ['.js', '.jsx'],
-      alias: {
-        '@actions': path.resolve('src/actions'),
-        '@components': path.resolve('src/components'),
-        '@constants': path.resolve('src/constants'),
-        '@pages': path.resolve('src/pages'),
-        '@reducers': path.resolve('src/reducers'),
-        '@store':  path.resolve('src/store'),
-        '@utils': path.resolve('utils')
-      }
+    extensions: ['.js', '.jsx'],
+    alias: {
+      '@actions': path.resolve('src/actions'),
+      '@components': path.resolve('src/components'),
+      '@constants': path.resolve('src/constants'),
+      '@pages': path.resolve('src/pages'),
+      '@reducers': path.resolve('src/reducers'),
+      '@store': path.resolve('src/store'),
+      '@utils': path.resolve('utils'),
+    },
   },
   plugins: [
-    new webpack.optimize.CommonsChunkPlugin({name:'common'}),
-    new ExtractTextPlugin( {filename: "[name].css",
+    new webpack.optimize.CommonsChunkPlugin({ name: 'common' }),
+    new ExtractTextPlugin({ filename: '[name].css',
       allChunks: true,
-    })
+    }),
   ],
 
   module: {
-      loaders: [
-          {
-            test: /\.js|jsx$/,
-            loader: 'babel-loader',
-            exclude: '/node_modules/'
-          },
-          {
-            test: /\.css|scss$/,
-            loader: ExtractTextPlugin.extract({
-              fallbackLoader: 'style-loader',
-              loader:'css-loader?minimize&modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]'
-              + '!postcss-loader'
-              }
-            )
-          }
-      ]
-  }
+    loaders: [
+      {
+        test: /\.js|jsx$/,
+        loader: 'babel-loader',
+        exclude: '/node_modules/',
+      },
+      {
+        test: /\.css|scss$/,
+        loader: ExtractTextPlugin.extract({
+          fallbackLoader: 'style-loader',
+          loader: 'css-loader?minimize&modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]'
+              + '!postcss-loader',
+        }),
+      },
+    ],
+  },
 };
 
 module.exports = webpackConfig;

@@ -7,7 +7,6 @@
     "plugins": ["transform-decorators-legacy"],
     "env": {
         "development": {
-          "plugins": ["react-hot-loader/babel"],
         },
         "production": {
           "plugins": ["transform-runtime"],

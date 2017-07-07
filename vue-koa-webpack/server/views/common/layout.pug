@@ -12,7 +12,7 @@ html
     #app
       block content
     script.
-      var preloadedState=!{JSON.stringify(preloadedState)}
+      var preloadedState=!{JSON.stringify({})}
     each item in assets.js
       script(src=item, type="text/javascript")
     block js
