@@ -1,18 +1,23 @@
-import React, {Component, PropTypes} from 'react';
+import React, { Component, PropTypes } from 'react';
 import cssModule from 'react-css-modules';
 
 import style from './style.css';
 
-class Dropdown extends Component{
+class Dropdown extends Component {
   static propTypes = {
   }
 
-  constructor(props){
+  constructor(props) {
     super(props);
+    console.log('i am constructor');
   }
 
-  render(){
-    return (<div>...</div>);
+  render() {
+    return (
+      <div styleName="dropdown">
+        dropdown content
+      </div>
+    );
   }
 }
 
