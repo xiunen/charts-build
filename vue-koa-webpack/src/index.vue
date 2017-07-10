@@ -1,9 +1,11 @@
 <template>
-  <div>App</div>
+  <div>
+      <h1>Vuew create App</h1>
+      <router-view/>
+  </div>
 </template>
 
 <script>
-  console.log('App');
   export default {
     created(){
       console.log('created App');
